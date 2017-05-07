@@ -56,11 +56,42 @@ export default class ContentPlaceHolder extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.background} onLayout={(event) => { this._onLayout(event) }}>
+
           <Animated.View style={[styles.linGradient,{marginLeft}]}>
             <LinearGradient
               start={{x: 0, y: 0}} end={{x: 1, y: 0}}
               colors={['#f6f7f8', '#e8e8e8', '#dddddd']}  style={styles.linGradient} />
           </Animated.View>
+
+          <View style={styles.header}>
+            <View style={styles.headerLineSeparator}/>
+            <View style={styles.headerLine}>
+              <View style={{height:12,width:8,backgroundColor:'#fff'}}/>
+              <View style={{height:12,width:82,backgroundColor:'#fff'}}/>
+            </View>
+            <View style={styles.headerLineSeparator}/>
+            <View style={styles.headerLine}>
+              <View style={{height:8,width:8,backgroundColor:'#fff'}}/>
+              <View style={{height:8,width:160,backgroundColor:'#fff'}}/>
+            </View>
+            <View style={{height:24,backgroundColor:'#fff'}}/>
+          </View>
+          <View style={{height:16,backgroundColor:'#fff'}}/>
+
+          <View style={styles.content}>
+            <View style={styles.contentLine}>
+              <View style={{height:10,width:32,backgroundColor:'#fff'}}/>
+            </View>
+            <View style={styles.contentLineSeperator}/>
+            <View style={styles.contentLine}>
+              <View style={{height:10,width:20,backgroundColor:'#fff'}}/>
+            </View>
+            <View style={styles.contentLineSeperator}/>
+            <View style={styles.contentLine}>
+              <View style={{height:10,width:90,backgroundColor:'#fff'}}/>
+            </View>
+          </View>
+
         </View>
       </View>
     );
@@ -80,7 +111,6 @@ const styles = StyleSheet.create({
   },
   background:{
     backgroundColor:'#f6f7f8',
-    flex:1
   },
   linGradient:{
     width:gradientWidth,
@@ -89,4 +119,22 @@ const styles = StyleSheet.create({
     left:0,
     bottom:0,
   },
+  header:{
+    marginLeft:60,
+    flexDirection:'column',
+  },
+  headerLine:{
+    justifyContent:'space-between',flexDirection:'row'
+  },
+  headerLineSeparator:{
+    height:8,backgroundColor:'#fff'
+  },
+  content:{
+    flexDirection:'column',
+  },
+  contentLine:{
+    flexDirection:'row',
+    justifyContent:'flex-end'
+  },
+  contentLineSeperator:{height:4,backgroundColor:'#fff'}
 });

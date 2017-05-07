@@ -10,13 +10,25 @@ import {
 export default class ContentPlaceHolder extends Component {
 
   constructor () {
-    super()
+    super();
+    this.state = {
+      width:0
+    }
+  }
+
+  _onLayout(event){
+    var {width} = event.nativeEvent.layout;
+    this.setState({
+      width:width
+    });
   }
 
   render() {
     return (
       <View style={styles.wrapper}>
+        <View style={styles.background} onLayout={(event) => { this._onLayout(event) }}>
 
+        </View>
       </View>
     );
   }
@@ -33,6 +45,7 @@ const styles = StyleSheet.create({
     padding:12,
     marginBottom:12,
   },
-
-
+  background:{
+    backgroundColor:'#f6f7f8',
+  },
 });

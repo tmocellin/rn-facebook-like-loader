@@ -11,4 +11,4 @@ If you just want to use the component
 - Add [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient) to your project 
 - Copy the code of the ContentPlaceHolder.js in src/components 
 
-If you want you can read the blog post that show how to build it [here]()
+If you want you can read the blog post that show how to build it [here](https://blog.dwastudio.fr/ui-chargement-de-donnees-comme-facebook-avec-reactnative/)
